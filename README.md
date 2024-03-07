@@ -30,17 +30,18 @@ See the [SNMP probe](https://github.com/infrasonar/snmp-probe#config).
 ## Dry run
 
 Available checks:
-- `controller`
-- `eventlog`
-- `storage`
-- `system`
+- `disk`
+- `fan`
+- `psu`
+- `temperature`
+- `volume`
 
 Create a yaml file, for example _(test.yaml)_:
 
 ```yaml
 asset:
   name: "foo.local"
-  check: "system"
+  check: "disk"
   config:
     address: "192.168.1.2"
 ```

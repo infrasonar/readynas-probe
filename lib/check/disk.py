@@ -3,16 +3,14 @@ from libprobe.asset import Asset
 from ..utils import get_data
 
 QUERIES = (
-    MIB_INDEX['CPQHLTH-MIB']['cpqHeEventLogEntry'],
+    MIB_INDEX['READYNAS-MIB']['diskEntry'],
 )
 
 
-async def check_eventlog(
+async def check_disk(
         asset: Asset,
         asset_config: dict,
         check_config: dict):
 
     state = await get_data(asset, asset_config, check_config, QUERIES)
-    for item in state.get('cpqHeEventLogEntry', []):
-        item.pop('cpqHeEventLogFreeFormData', None)
     return state

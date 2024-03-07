@@ -1,0 +1,711 @@
+{
+  "IMPORTS": [
+    [
+      "RFC-1212",
+      [
+        "OBJECT-TYPE"
+      ]
+    ],
+    [
+      "RFC-1215",
+      [
+        "TRAP-TYPE"
+      ]
+    ],
+    [
+      "RFC1155-SMI",
+      [
+        "enterprises"
+      ]
+    ],
+    [
+      "RFC1213-MIB",
+      [
+        "DisplayString"
+      ]
+    ]
+  ],
+  "netgear": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "enterprises",
+      4526
+    ]
+  },
+  "productID": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "netgear",
+      100
+    ]
+  },
+  "readyNAS": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "productID",
+      12
+    ]
+  },
+  "nasManager": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "netgear",
+      18
+    ]
+  },
+  "nasMgrSoftwareVersion": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "nasManager",
+      1
+    ]
+  },
+  "diskTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF DiskEntry"
+    },
+    "index": null,
+    "value": [
+      "nasManager",
+      3
+    ]
+  },
+  "diskEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DiskEntry"
+    },
+    "index": [
+      "diskNumber"
+    ],
+    "value": [
+      "diskTable",
+      1
+    ]
+  },
+  "DiskEntry": {
+    "tp": "SEQUENCE"
+  },
+  "diskNumber": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "diskEntry",
+      1
+    ]
+  },
+  "diskChannel": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "diskEntry",
+      2
+    ]
+  },
+  "diskModel": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "diskEntry",
+      3
+    ]
+  },
+  "diskState": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "diskEntry",
+      4
+    ]
+  },
+  "diskTemperature": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "diskEntry",
+      5
+    ]
+  },
+  "fanTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF FanEntry"
+    },
+    "index": null,
+    "value": [
+      "nasManager",
+      4
+    ]
+  },
+  "fanEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "FanEntry"
+    },
+    "index": [
+      "fanNumber"
+    ],
+    "value": [
+      "fanTable",
+      1
+    ]
+  },
+  "FanEntry": {
+    "tp": "SEQUENCE"
+  },
+  "fanNumber": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "fanEntry",
+      1
+    ]
+  },
+  "fanRPM": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "fanEntry",
+      2
+    ]
+  },
+  "fanType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "fanEntry",
+      3
+    ]
+  },
+  "temperatureTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF TemperatureEntry"
+    },
+    "index": null,
+    "value": [
+      "nasManager",
+      5
+    ]
+  },
+  "temperatureEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TemperatureEntry"
+    },
+    "index": [
+      "temperatureNumber"
+    ],
+    "value": [
+      "temperatureTable",
+      1
+    ]
+  },
+  "TemperatureEntry": {
+    "tp": "SEQUENCE"
+  },
+  "temperatureNumber": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "temperatureEntry",
+      1
+    ]
+  },
+  "temperatureValue": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "temperatureEntry",
+      2
+    ]
+  },
+  "temperatureStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "temperatureEntry",
+      3
+    ]
+  },
+  "volumeTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF VolumeEntry"
+    },
+    "index": null,
+    "value": [
+      "nasManager",
+      7
+    ]
+  },
+  "volumeEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "VolumeEntry"
+    },
+    "index": [
+      "volumeNumber"
+    ],
+    "value": [
+      "volumeTable",
+      1
+    ]
+  },
+  "VolumeEntry": {
+    "tp": "SEQUENCE"
+  },
+  "volumeNumber": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "volumeEntry",
+      1
+    ]
+  },
+  "volumeName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "volumeEntry",
+      2
+    ]
+  },
+  "volumeRAIDLevel": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "volumeEntry",
+      3
+    ]
+  },
+  "volumeStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "volumeEntry",
+      4
+    ]
+  },
+  "volumeSize": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "volumeEntry",
+      5
+    ]
+  },
+  "volumeFreeSpace": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "volumeEntry",
+      6
+    ]
+  },
+  "psuTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF PSUEntry"
+    },
+    "index": null,
+    "value": [
+      "nasManager",
+      8
+    ]
+  },
+  "psuEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "PSUEntry"
+    },
+    "index": [
+      "psuNumber"
+    ],
+    "value": [
+      "psuTable",
+      1
+    ]
+  },
+  "PSUEntry": {
+    "tp": "SEQUENCE"
+  },
+  "psuNumber": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "psuEntry",
+      1
+    ]
+  },
+  "psuDesc": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "psuEntry",
+      2
+    ]
+  },
+  "psuStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "psuEntry",
+      3
+    ]
+  },
+  "aryMgrEvts": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "nasManager",
+      200
+    ]
+  },
+  "controllerNameEv": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "aryMgrEvts",
+      201
+    ]
+  },
+  "channelNumberEv": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "aryMgrEvts",
+      202
+    ]
+  },
+  "targetIDEv": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "aryMgrEvts",
+      203
+    ]
+  },
+  "virtualDiskNameEv": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "aryMgrEvts",
+      204
+    ]
+  },
+  "arrayDiskNameEv": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "aryMgrEvts",
+      205
+    ]
+  },
+  "oldVDConfigEv": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "aryMgrEvts",
+      206
+    ]
+  },
+  "newVDConfigEv": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "aryMgrEvts",
+      207
+    ]
+  },
+  "enclosureNumberEv": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "aryMgrEvts",
+      208
+    ]
+  },
+  "unitNumberEv": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "aryMgrEvts",
+      209
+    ]
+  },
+  "enclosureNameEv": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "aryMgrEvts",
+      210
+    ]
+  },
+  "unitNameEv": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "aryMgrEvts",
+      211
+    ]
+  },
+  "timeEv": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "aryMgrEvts",
+      212
+    ]
+  },
+  "volumeNameEv": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "aryMgrEvts",
+      213
+    ]
+  },
+  "fanFailureMesg": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "nasManager",
+      400
+    ]
+  },
+  "tempFailureMesg": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "nasManager",
+      401
+    ]
+  },
+  "powerFailureMesg": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "nasManager",
+      402
+    ]
+  },
+  "raidMesg": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "nasManager",
+      403
+    ]
+  },
+  "snapshotMesg": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "nasManager",
+      404
+    ]
+  },
+  "upsMesg": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "nasManager",
+      405
+    ]
+  },
+  "sataMesg": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "nasManager",
+      406
+    ]
+  },
+  "volumeMesg": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "nasManager",
+      407
+    ]
+  },
+  "diskTempWarningMesg": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "nasManager",
+      408
+    ]
+  },
+  "backupMesg": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "nasManager",
+      409
+    ]
+  },
+  "smartMesg": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "nasManager",
+      410
+    ]
+  },
+  "psuMesg": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "nasManager",
+      411
+    ]
+  },
+  "nasTraps": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "nasManager",
+      300
+    ]
+  }
+}

@@ -1,17 +1,19 @@
 from libprobe.probe import Probe
-from lib.check.controller import check_controller
-from lib.check.eventlog import check_eventlog
-from lib.check.storage import check_storage
-from lib.check.system import check_system
+from lib.check.disk import check_disk
+from lib.check.fan import check_fan
+from lib.check.psu import check_psu
+from lib.check.temperature import check_temperature
+from lib.check.volume import check_volume
 from lib.version import __version__ as version
 
 
 if __name__ == '__main__':
     checks = {
-        'controller': check_controller,
-        'eventlog': check_eventlog,
-        'storage': check_storage,
-        'system': check_system,
+        'disk': check_disk,
+        'fan': check_fan,
+        'psu': check_psu,
+        'temperature': check_temperature,
+        'volume': check_volume,
     }
 
     probe = Probe("readynas", version, checks)

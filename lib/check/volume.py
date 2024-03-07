@@ -3,11 +3,11 @@ from libprobe.asset import Asset
 from ..utils import get_data
 
 QUERIES = (
-    MIB_INDEX['CPQIDA-MIB']['cpqDaCntlrEntry'],
+    MIB_INDEX['READYNAS-MIB']['volumeEntry'],
 )
 
 
-async def check_controller(
+async def check_volume(
         asset: Asset,
         asset_config: dict,
         check_config: dict):

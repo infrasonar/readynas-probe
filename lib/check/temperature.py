@@ -3,12 +3,11 @@ from libprobe.asset import Asset
 from ..utils import get_data
 
 QUERIES = (
-    MIB_INDEX['CPQIDA-MIB']['cpqDaLogDrvEntry'],
-    MIB_INDEX['CPQIDA-MIB']['cpqDaPhyDrvEntry'],
+    MIB_INDEX['READYNAS-MIB']['temperatureEntry'],
 )
 
 
-async def check_storage(
+async def check_temperature(
         asset: Asset,
         asset_config: dict,
         check_config: dict):
