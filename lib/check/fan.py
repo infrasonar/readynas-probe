@@ -3,7 +3,7 @@ from libprobe.asset import Asset
 from ..utils import get_data
 
 QUERIES = (
-    MIB_INDEX['READYNAS-MIB']['fanEntry'],
+    MIB_INDEX['READYDATAOS-MIB']['fanEntry'],
 )
 
 
