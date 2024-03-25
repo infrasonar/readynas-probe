@@ -13,4 +13,6 @@ async def check_disk(
         check_config: dict):
 
     state = await get_data(asset, asset_config, check_config, QUERIES)
+    for disk in state.get('diskEntry', []):
+        disk['diskCapacity'] = int(disk['diskCapacity'])
     return state
