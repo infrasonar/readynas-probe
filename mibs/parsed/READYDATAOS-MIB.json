@@ -64,6 +64,17 @@
       1
     ]
   },
+  "nasMgrSerialNUM": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "ngNasManager",
+      2
+    ]
+  },
   "diskTable": {
     "tp": "OBJECT-TYPE",
     "syntax": {
@@ -789,6 +800,17 @@
       411
     ]
   },
+  "systemNoticeMesg": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "ngNasManager",
+      412
+    ]
+  },
   "nasTraps": {
     "tp": "OBJECT IDENTIFIER",
     "value": [
@@ -879,5 +901,12 @@
       "psuWarningMesg"
     ],
     "value": 120
+  },
+  "systemNotice": {
+    "tp": "TRAP-TYPE",
+    "variables": [
+      "systemNoticeMesg"
+    ],
+    "value": 130
   }
 }
