@@ -33,6 +33,7 @@ Available checks:
 - `disk`
 - `fan`
 - `psu`
+- `system`
 - `temperature`
 - `volume`
 
