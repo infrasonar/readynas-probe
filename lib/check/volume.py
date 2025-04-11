@@ -4,7 +4,7 @@ from ..snmpclient import get_snmp_client
 from ..snmpquery import snmpquery
 
 QUERIES = (
-    MIB_INDEX['READYDATAOS-MIB']['volumeEntry'],
+    (MIB_INDEX['READYDATAOS-MIB']['volumeEntry'], True),
 )
 
 
