@@ -11,6 +11,7 @@ QUERIES = (
 
 class CheckSystem(Check):
     key = 'system'
+    unchanged_eol = 14400
 
     @staticmethod
     async def run(asset: Asset, local_config: dict, config: dict) -> dict:
